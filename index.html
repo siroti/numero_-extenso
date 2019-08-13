@@ -18,15 +18,20 @@
     <script>
         var exibir = "";
         var num = window.location.pathname;
+        var negativo = "";
         num = num.substring(1);  
         console.log("teste2 "+num);
-        if(num > -100000 || num < 100000){
-            exibir = extenso(num); 
+        if(num > -100000 && num < 100000 && num != ""){
+            if(num < 0){ 
+                negativo = "menos ";
+                num = num.substring(1); 
+            }    
+            exibir = negativo + extenso(num); 
         } else {
-            exibir = "Número máximo ultrapassou o limite! Deve digitar por extenso numerais de -99999 a 99999";
+            exibir = "Digite um número entre -99999 e 99999 no URL";
         }
         window.onload = function () {
-            document.getElementById('ext').innerHTML = exibir; 
+            document.getElementById('ext').innerHTML =  exibir; 
         }
     </script>
 </html>
