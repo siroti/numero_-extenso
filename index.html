@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Eduardo Siroti - PCD</title>
+        <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet"> 
+        <link href="/css/estrutura.css" type="text/css" rel="stylesheet" />
+    </head>
+    <body>
+        <div class="container">
+            <div class="content">
+                <div class="title">Números por extenso</div>
+                <div class="info" id="ext"> zero </div>
+            </div>
+        </div>
+    </body>
+    <script type="text/javascript" src="/js/extenso.js"></script>
+    <script>
+        var exibir = "";
+        var num = window.location.pathname;
+        num = num.substring(1);  
+        console.log("teste2 "+num);
+        if(num > -100000 || num < 100000){
+            exibir = extenso(num); 
+        } else {
+            exibir = "Número máximo ultrapassou o limite! Deve digitar por extenso numerais de -99999 a 99999";
+        }
+        window.onload = function () {
+            document.getElementById('ext').innerHTML = exibir; 
+        }
+    </script>
+</html>
